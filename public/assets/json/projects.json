@@ -1,0 +1,51 @@
+{
+    "routerjs": {
+        "title": "Router.js",
+        "subheading": "Node and JS client-side router",
+        "description": "assigns handlers to a path and executes them when a path is reached",
+        "images": [
+            "tracker.png"
+        ],
+        "technologies": [
+            "JavaScript"
+        ],
+        "links": [
+            "https://github.com/rootgog/router.js"
+        ]
+    },
+    "volume": {
+        "title": "Volume",
+        "subheading": "PWA which tracks and analyses workout data. Contains a tracker to track improvised workouts and created routines.Analyses and presents data in a readable form.",
+        "description": "tracks workouts etc",
+        "images": [
+            "tracker.png",
+            "history.png"
+        ],
+        "technologies": [
+            "Node.js",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "links": [
+            "https://volume.fitness"
+        ]
+    },
+    "shapetextjs": {
+        "title": "ShapeText.js",
+        "subheading": "Turns text into interactive shapes",
+        "description": "input text and interaction parameters to create a canvas with interactive text",
+        "images": [
+            "demo.png"
+        ],
+        "technologies": [
+            "Node.js",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "links": [
+            "https://github.com/rootgog/shapetext"
+        ]
+    }
+}

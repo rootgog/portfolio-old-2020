@@ -1,0 +1,265 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --header-height: 60px;
+    --text-colour: #838383;
+    --highlight-colour: #585858;
+    --open-sans-condensed: 'Open Sans Condensed',
+        sans-serif;
+    --open-sans: 'Open Sans',
+        sans-serif;
+}
+
+* {
+    color: var(--text-colour);
+    font-family: var(--open-sans);
+}
+
+body {
+    display: grid;
+    grid-auto-rows: var(--header-height) auto;
+    grid-template-areas: "header""content";
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-auto-columns: 135px auto;
+    grid-template-areas: "logo nav";
+    line-height: var(--header-height);
+    border-bottom: 1px solid var(--highlight-colour);
+    letter-spacing: 1.2px;
+}
+
+.logo {
+    grid-area: logo;
+    padding-left: 5%;
+    font-weight: 900;
+    color: var(--highlight-colour);
+}
+
+.footer {
+    display: none;
+}
+
+.nav {
+    grid-area: nav;
+    text-align: right;
+    padding-right: 5%;
+}
+
+.nav>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav>ul>li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.nav>ul>li>a {
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.active {
+    border-bottom: 1px solid var(--highlight-colour);
+}
+
+.content {
+    grid-area: content;
+    padding: 5%;
+    overflow-y: auto;
+}
+
+.projcontainer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.project {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.project>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.project:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+.project>h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    color: white;
+    transition: top .3s;
+}
+
+.project>p {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    height: 0;
+    width: 100%;
+    /*padding: 5px;*/
+    background: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0);
+    text-align: center;
+    z-index: 100;
+    transition: height .5s, color .5s;
+}
+
+.project:hover>h3 {
+    top: 33%;
+}
+
+.project:hover>p {
+    height: 33%;
+    z-index: 300;
+    color: rgba(255, 255, 255, 1);
+}
+
+.splashcontainer {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.splashcontainer>h1 {
+    color: var(--highlight-colour);
+}
+
+.splashcontainer>p:last-child {
+    text-align: right;
+}
+
+.splashcontainercontact {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* MOBILEIFY */
+
+@media only screen and (max-width: 450px) {
+    body {
+        display: grid;
+        grid-auto-rows: var(--header-height) auto var(--header-height);
+        grid-template-areas: "header""content""footer";
+    }
+
+    .header {
+        grid-auto-columns: 1fr;
+        grid-template-areas: "logo";
+    }
+
+    .header>.logo {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .header>.nav {
+        display: none;
+    }
+
+    .footer {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-areas: "nav";
+    }
+
+    .footer>.nav>ul {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .footer>.nav li {
+        display: block;
+        line-height: var(--header-height);
+    }
+}
+
+.project-page {
+    display: grid;
+    grid-template-columns: auto 200px;
+    grid-template-areas:
+        "title ."
+        "subheading meta"
+        "desc meta"
+        "images images";
+}
+
+.project-page .title {
+    grid-area: title;
+}
+
+.project-page .subheading {
+    grid-area: subheading;
+    font-size: 13px;
+}
+
+.project-page .meta {
+    grid-area: meta;
+}
+
+.project-page .tech img {
+    width: 40px;
+    padding: 5px;
+}
+
+.project-page .desc {
+    grid-area: desc;
+}
+
+.project-page .images {
+    grid-area: images;
+    text-align: center;
+}
+
+.project-page .images img {
+    padding: 5px;
+    width: 200px;
+}
+
+.project-page .links img {
+    width: 40px;
+    padding: 5px;
+}
+
+.project-page h5 {
+    margin: 0;
+}
