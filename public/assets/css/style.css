@@ -171,7 +171,81 @@ body {
     text-align: center;
 }
 
+.project-page {
+    display: grid;
+    grid-template-columns: auto 200px;
+    column-gap: 20px;
+    grid-template-areas:
+        "title ."
+        "subheading meta"
+        "desc meta"
+        "images images";
+}
+
+.project-page .title {
+    grid-area: title;
+}
+
+.project-page .subheading {
+    grid-area: subheading;
+    font-size: 13px;
+}
+
+.project-page .meta {
+    grid-area: meta;
+}
+
+.project-page .links {
+    word-wrap: break-word;
+}
+
+.project-page .tech img {
+    max-width: 40px;
+    max-height: 40px;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.project-page .desc {
+    grid-area: desc;
+}
+
+.project-page .images {
+    grid-area: images;
+    text-align: center;
+}
+
+.project-page .images img {
+    padding: 5px;
+    max-width: 300px;
+}
+
+.project-page .links img {
+    width: 40px;
+    padding: 5px;
+}
+
+.project-page h5 {
+    margin: 0;
+}
+
 /* MOBILEIFY */
+
+@media only screen and (max-width: 900px) {
+    .project-page {
+        display: grid;
+        grid-template-columns: auto 200px;
+        grid-template-areas:
+            "title ."
+            "subheading meta"
+            "desc desc"
+            "images images";
+    }
+
+    .project-page .meta {
+        text-align: right;
+    }
+}
 
 @media only screen and (max-width: 450px) {
     body {
@@ -211,55 +285,20 @@ body {
         display: block;
         line-height: var(--header-height);
     }
-}
 
-.project-page {
-    display: grid;
-    grid-template-columns: auto 200px;
-    grid-template-areas:
-        "title ."
-        "subheading meta"
-        "desc meta"
-        "images images";
-}
+    .project-page {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas:
+            "title"
+            "subheading"
+            "meta"
+            "desc"
+            "images";
+        text-align: center;
+    }
 
-.project-page .title {
-    grid-area: title;
-}
-
-.project-page .subheading {
-    grid-area: subheading;
-    font-size: 13px;
-}
-
-.project-page .meta {
-    grid-area: meta;
-}
-
-.project-page .tech img {
-    width: 40px;
-    padding: 5px;
-}
-
-.project-page .desc {
-    grid-area: desc;
-}
-
-.project-page .images {
-    grid-area: images;
-    text-align: center;
-}
-
-.project-page .images img {
-    padding: 5px;
-    width: 200px;
-}
-
-.project-page .links img {
-    width: 40px;
-    padding: 5px;
-}
-
-.project-page h5 {
-    margin: 0;
+    .project-page .meta {
+        text-align: center;
+    }
 }

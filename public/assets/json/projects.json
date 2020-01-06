@@ -1,51 +1,26 @@
 {
-    "routerjs": {
-        "title": "Router.js",
-        "subheading": "Node and JS client-side router",
-        "description": "assigns handlers to a path and executes them when a path is reached",
-        "images": [
-            "tracker.png"
-        ],
-        "technologies": [
-            "JavaScript"
-        ],
-        "links": [
-            "https://github.com/rootgog/router.js"
-        ]
-    },
-    "volume": {
-        "title": "Volume",
-        "subheading": "PWA which tracks and analyses workout data. Contains a tracker to track improvised workouts and created routines.Analyses and presents data in a readable form.",
-        "description": "tracks workouts etc",
-        "images": [
-            "tracker.png",
-            "history.png"
-        ],
-        "technologies": [
-            "Node.js",
-            "JavaScript",
-            "HTML",
-            "CSS"
-        ],
-        "links": [
-            "https://volume.fitness"
-        ]
-    },
-    "shapetextjs": {
-        "title": "ShapeText.js",
-        "subheading": "Turns text into interactive shapes",
-        "description": "input text and interaction parameters to create a canvas with interactive text",
-        "images": [
-            "demo.png"
-        ],
-        "technologies": [
-            "Node.js",
-            "JavaScript",
-            "HTML",
-            "CSS"
-        ],
-        "links": [
-            "https://github.com/rootgog/shapetext"
-        ]
-    }
+  "routerjs": {
+    "title": "Router.js",
+    "subheading": "JavaScript router used for setting handlers for paths. Packaged for use in a browser or Node.js environment.",
+    "description": "Router.js was created as I was wanting to create one-page applications but the majority of available options to do so either lacked features or has too many unnecessary ones. My version which I use in all of my one-page applications including this portfolio allows routes to be set up with handlers assigned to them which are executed on a successful path resolve. This is not all however, I also implemented the ability to nest routers for better code management along with adding redirections for when two paths need to use the same handler. This module can be used in a number of ways; the source code can be used as an ES6 directly in a project, the module can also be included from a NPM CDN and finally NPM can be used to directly use the module within Node.js.",
+    "images": [],
+    "technologies": ["JavaScript", "Rollup.js", "npm"],
+    "links": ["https://github.com/rootgog/router.js"]
+  },
+  "volume": {
+    "title": "Volume",
+    "subheading": "PWA which tracks and analyses workout data. Contains a tracker to track improvised workouts and created routines, along with analysing and presenting data in a readable form.",
+    "description": "I created volume as I was unhappy with the fitness tracker apps that are available and wanted to create an app that catered to what I wanted. The project is currently still under development, so a public live version is not available however I am hoping to release it by summer 2020. The app allows routines and programs to be created which can be shared allowing people to interact. The app has a built-in workout tracker which integrates seamlessly. I wanted the app to be available on any device which left me with either developing for systems I have never even heard of or creating a web app which is available on every platform as standard this is why the app is built as a PWA. All of the code for the project is written by me so far. Not a single library has been used. This is not the fastest way for developing an app, but it has been a side project for a long time. Through developing everything by myself it allows me to optimise and reduce any bloat which would come with a library or framework.",
+    "images": ["tracker.png", "history.png", "group-editor.png"],
+    "technologies": ["Node.js", "JavaScript", "HTML", "CSS"],
+    "links": ["https://volume.fitness"]
+  },
+  "shapetextjs": {
+    "title": "ShapeText.js",
+    "subheading": "Turns text into interactive shapes",
+    "description": "input text and interaction parameters to create a canvas with interactive text",
+    "images": ["demo.png"],
+    "technologies": ["Node.js", "JavaScript", "HTML", "CSS"],
+    "links": ["https://github.com/rootgog/shapetext", "https://rootgog.github.io/shapetext/demo"]
+  }
 }

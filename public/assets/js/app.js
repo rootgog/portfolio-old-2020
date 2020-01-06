@@ -45,7 +45,7 @@ window.onload = () => {
 
             //images
             data.images.forEach(img => {
-              images.innerHTML += `<img src="/assets/img/projects/volume/${img}">`;
+              images.innerHTML += `<img src="/assets/img/projects/${project}/${img}">`;
             });
 
             //technologies
@@ -65,6 +65,16 @@ window.onload = () => {
                 case "javascript":
                   technology = `<img src="/assets/img/logos/javascript.png" alt="JavaScript" title="JavaScript">`;
                   break;
+                case "rollup":
+                case "rollupjs":
+                case "rollup.js":
+                  technology = `<img src="/assets/img/logos/rollup.png" alt="Rollup.js" title="Rollup.js">`;
+                  break;
+                case "npm":
+                case "npmjs":
+                case "npm.js":
+                  technology = `<img src="/assets/img/logos/npm.png" alt="Node Package Manager" title="Node Package Manager">`;
+                  break;
               }
               tech.innerHTML += technology;
             });
@@ -73,7 +83,7 @@ window.onload = () => {
             data.links.forEach(link => {
               let text = link;
               if (link.includes("//github.")) {
-                text = `<img src="/assets/img/logos/Github-Mark-64px.png">`;
+                text = `<img src="/assets/img/logos/Github-Mark-64px.png" alt="Github Link" title="View Code On Github">`;
               }
               links.innerHTML += `<a href=${link}>${text}</a>`;
             });
