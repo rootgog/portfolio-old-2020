@@ -16,79 +16,82 @@ window.onload = () => {
     .on(
       "projects",
       new Router()
-        .on(() => {
-          //projects page
-          loadContent("assets/pages/projects.html");
-        })
-        .on("*", () => {
-          //individual project page
-          loadContent("assets/pages/project.html", () => {
-            let title = document.querySelector(".title");
-            let subheading = document.querySelector(".subheading");
-            let desc = document.querySelector(".desc");
-            let images = document.querySelector(".images");
-            let tech = document.querySelector(".tech");
-            let links = document.querySelector(".links");
+      .on(() => {
+        //projects page
+        loadContent("assets/pages/projects.html");
+      })
+      .on("*", () => {
+        //individual project page
+        loadContent("assets/pages/project.html", () => {
+          let title = document.querySelector(".title");
+          let subheading = document.querySelector(".subheading");
+          let desc = document.querySelector(".desc");
+          let images = document.querySelector(".images");
+          let tech = document.querySelector(".tech");
+          let links = document.querySelector(".links");
 
-            let project = (window.location.pathname[0] == "/"
-              ? window.location.pathname.substr(1)
-              : window.location.pathname
-            ).split("/")[1];
-            let data = projects[project];
+          let project = (window.location.pathname[0] == "/" ?
+            window.location.pathname.substr(1) :
+            window.location.pathname
+          ).split("/")[1];
+          let data = projects[project];
 
-            //static data
-            title.innerHTML = data.title;
-            subheading.innerHTML = data.subheading;
-            desc.innerHTML = data.description;
+          //static data
+          title.innerHTML = data.title;
+          subheading.innerHTML = data.subheading;
+          desc.innerHTML = data.description;
 
-            //custom data
+          //custom data
 
-            //images
-            data.images.forEach(img => {
-              images.innerHTML += `<img src="/assets/img/projects/${project}/${img}">`;
-            });
-
-            //technologies
-            data.technologies.forEach(technology => {
-              switch (technology.toLowerCase()) {
-                case "node":
-                case "nodejs":
-                case "node.js":
-                  technology = `<img src="/assets/img/logos/node.png" alt="Node.js" title="Node.js">`;
-                  break;
-                case "html":
-                  technology = `<img src="/assets/img/logos/html.png" alt="HTML" title="HTML">`;
-                  break;
-                case "css":
-                  technology = `<img src="/assets/img/logos/css.png" alt="CSS" title="CSS">`;
-                  break;
-                case "javascript":
-                  technology = `<img src="/assets/img/logos/javascript.png" alt="JavaScript" title="JavaScript">`;
-                  break;
-                case "rollup":
-                case "rollupjs":
-                case "rollup.js":
-                  technology = `<img src="/assets/img/logos/rollup.png" alt="Rollup.js" title="Rollup.js">`;
-                  break;
-                case "npm":
-                case "npmjs":
-                case "npm.js":
-                  technology = `<img src="/assets/img/logos/npm.png" alt="Node Package Manager" title="Node Package Manager">`;
-                  break;
-              }
-              tech.innerHTML += technology;
-            });
-
-            //links
-            data.links.forEach(link => {
-              let text = link;
-              if (link.includes("//github.")) {
-                text = `<img src="/assets/img/logos/Github-Mark-64px.png" alt="Github Link" title="View Code On Github">`;
-              }
-              links.innerHTML += `<a href=${link}>${text}</a>`;
-            });
+          //images
+          data.images.forEach(img => {
+            images.innerHTML += `<img src="/assets/img/projects/${project}/${img}">`;
           });
-        })
+
+          //technologies
+          data.technologies.forEach(technology => {
+            switch (technology.toLowerCase()) {
+              case "node":
+              case "nodejs":
+              case "node.js":
+                technology = `<img src="/assets/img/logos/node.png" alt="Node.js" title="Node.js">`;
+                break;
+              case "html":
+                technology = `<img src="/assets/img/logos/html.png" alt="HTML" title="HTML">`;
+                break;
+              case "css":
+                technology = `<img src="/assets/img/logos/css.png" alt="CSS" title="CSS">`;
+                break;
+              case "javascript":
+                technology = `<img src="/assets/img/logos/javascript.png" alt="JavaScript" title="JavaScript">`;
+                break;
+              case "rollup":
+              case "rollupjs":
+              case "rollup.js":
+                technology = `<img src="/assets/img/logos/rollup.png" alt="Rollup.js" title="Rollup.js">`;
+                break;
+              case "npm":
+              case "npmjs":
+              case "npm.js":
+                technology = `<img src="/assets/img/logos/npm.png" alt="Node Package Manager" title="Node Package Manager">`;
+                break;
+            }
+            tech.innerHTML += technology;
+          });
+
+          //links
+          data.links.forEach(link => {
+            let text = link;
+            if (link.includes("//github.")) {
+              text = `<img src="/assets/img/logos/GitHub-Mark-64px.png" alt="Github Link" title="View Code On Github">`;
+            }
+            if (link.includes("//npmjs.") || link.includes("//www.npmjs.")) {
+              text = `<img src="/assets/img/logos/npm.png" alt="NPM Link" title="View Package On NPM">`;
+            }
+            links.innerHTML += `<a href=${link}>${text}</a>`;
+          });
+        });
+      })
     )
     .on(() => {
       //load home

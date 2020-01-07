@@ -221,8 +221,10 @@ body {
 }
 
 .project-page .links img {
-    width: 40px;
+    max-width: 40px;
+    max-height: 40px;
     padding: 5px;
+    vertical-align: middle;
 }
 
 .project-page h5 {
