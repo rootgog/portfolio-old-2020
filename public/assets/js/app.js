@@ -9,6 +9,13 @@ window.onload = () => {
       projects = data;
     });
 
+  let links = {
+    home: document.querySelector(`a[href="/"]`),
+    projects: document.querySelector(`a[href=projects]`),
+    contact: document.querySelector(`a[href=contact]`),
+    about: document.querySelector(`a[href=about]`)
+  }
+
   //define router and its routes
   let router = new Router();
 
@@ -19,6 +26,7 @@ window.onload = () => {
       .on(() => {
         //projects page
         loadContent("assets/pages/projects.html");
+        setActiveLink(links.projects);
       })
       .on("*", () => {
         //individual project page
@@ -91,19 +99,23 @@ window.onload = () => {
             links.innerHTML += `<a href=${link}>${text}</a>`;
           });
         });
+        setActiveLink(links.projects);
       })
     )
     .on(() => {
       //load home
       loadContent("./assets/pages/home.html");
+      setActiveLink(links.home);
     })
     .on("contact", () => {
       //contact page
       loadContent("assets/pages/contact.html");
+      setActiveLink(links.contact);
     })
     .on("about", () => {
       //about page
       loadContent("assets/pages/about.html");
+      setActiveLink(links.about);
     })
     .notFound(() => {
       loadContent("assets/pages/404.html");
@@ -157,4 +169,12 @@ function loadContent(path, callback = false) {
     .catch(err => {
       console.log(err);
     });
+}
+
+function setActiveLink(element) {
+  let currentAL = document.querySelector(".active-link");
+  if (currentAL) {
+    currentAL.classList.remove("active-link");
+  }
+  element.classList.add("active-link");
 }

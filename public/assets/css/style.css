@@ -70,7 +70,7 @@ body {
     text-transform: capitalize;
 }
 
-.active {
+.active-link {
     border-bottom: 1px solid var(--highlight-colour);
 }
 
