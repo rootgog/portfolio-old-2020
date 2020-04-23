@@ -39,5 +39,16 @@
       "https://github.com/rootgog/minimvc",
       "https://www.npmjs.com/package/minimvc"
     ]
+  },
+  "clockclock": {
+    "title": "Clock Clock",
+    "subheading": "A Clock made of Clocks",
+    "description": "An array of clocks organise thir hands to display numbers between them, the class uses canvas and plain JavaScript",
+    "images": ["clockclock.png"],
+    "technologies": ["JavaScript"],
+    "links": [
+      "https://github.com/rootgog/clockclock",
+      "https://rootgog.github.io/clockclock"
+    ]
   }
 }
