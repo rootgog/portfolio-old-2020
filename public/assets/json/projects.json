@@ -22,7 +22,7 @@
     "title": "ShapeText.js",
     "subheading": "JavaScript module used to create a body of text out of shapes which can be interacted with. Perfect for adding some interaction into a web page.",
     "description": "This module was created as a way to practice with canvas, it allowed me to have a small but complex problem that I could work on which had many transferable skills such as collision calculations, text rendering and most importantly optimisation. As this module creates a large number of objects (shapes) it inherently performs badly on load when processing the inputted text however with improvements it is at an acceptable level. The module is designed for splash pages and is something that can be used to catch the attention of the user.",
-    "images": ["demo.png"],
+    "images": ["demo.PNG"],
     "technologies": ["Node.js", "JavaScript", "HTML", "CSS"],
     "links": [
       "https://github.com/rootgog/shapetext",
@@ -44,7 +44,7 @@
     "title": "Clock Clock",
     "subheading": "A Clock made of Clocks",
     "description": "An array of clocks organise thir hands to display numbers between them, the class uses canvas and plain JavaScript",
-    "images": ["clockclock.png"],
+    "images": ["clockclock.PNG"],
     "technologies": ["JavaScript"],
     "links": [
       "https://github.com/rootgog/clockclock",
