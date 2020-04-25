@@ -44,7 +44,7 @@
     "title": "Clock Clock",
     "subheading": "A Clock made of Clocks",
     "description": "An array of clocks organise thir hands to display numbers between them, the class uses canvas and plain JavaScript",
-    "images": ["clockclock.PNG"],
+    "images": ["clockclock.gif"],
     "technologies": ["JavaScript"],
     "links": [
       "https://github.com/rootgog/clockclock",
